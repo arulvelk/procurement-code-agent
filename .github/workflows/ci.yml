@@ -24,7 +24,10 @@ jobs:
           cache: pip
 
       - name: Install
-        run: pip install -e ".[dev,graph]"
+        # llm is included here but not in the README quickstart. The anthropic
+        # import is lazy and guarded, so the package is not needed to run or
+        # test anything, but mypy cannot type check the decider without it.
+        run: pip install -e ".[dev,graph,llm]"
 
       - name: Lint
         run: ruff check .
