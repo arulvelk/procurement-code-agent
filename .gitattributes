@@ -1,0 +1,8 @@
+# Normalise to LF in the repository. Built on Windows, read on Linux runners,
+# and a data file whose line endings change between the two would show up as a
+# 3,408 line diff that means nothing.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.onnx binary
